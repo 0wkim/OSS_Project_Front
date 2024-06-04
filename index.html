@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youngwoo Kim Page</title>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/6bddef8dc2.js" crossorigin="anonymous"></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- script -->
+    <script defer src="/js/script.js"></script>
+</head>
+<body>
+    <!-- header -->
+    <header id="header">
+        <nav class="nav bd_grid">
+           <div>
+                <a href="#" class="nav_logo">Youngwoo Kim</a>
+           </div>
+
+           <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="#home" class="nav_link active">Home</a></li>
+                    <li class="nav_item"><a href="#about" class="nav_link">About</a></li>
+                    <li class="nav_item"><a href="#skills" class="nav_link">Skills</a></li>
+                    <li class="nav_item"><a href="#hobby" class="nav_link">Hobby</a></li>
+                    <li class="nav_item"><a href="#goal" class="nav_link">Goal</a></li>
+                    <li class="nav_item"><a href="#guestbook" class="nav_link">GuestBook</a></li>
+                    <li class="nav_item"><a href="#contact" class="nav_link">Contact</a></li>
+                </ul>
+           </div>
+
+           <div class="nav_toggle" id="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+           </div>
+        </nav>
+    </header>
+
+    <!-- main -->
+    <main id="main">
+        <!-- home -->
+        <section class="home" id="home">
+            <div class="home_container bd_grid">
+                <h1 class="home_title"><span>HE</span><br>LLO.</h1>
+
+                <div class="home_scroll">
+                    <a href="#about" class="home_scroll_link"><i class="fa-solid fa-arrow-up"></i> &nbsp;&nbsp;Scroll Down</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- about -->
+        <section class="about section" id="about">
+            <h2 class="section_title">About</h2>
+
+            <div class="about_container bd_grid">
+                <div class="about_img">
+                    <!-- img -->
+                    <img src="/img/profile.jpg" alt="profile" class="about_img">
+                </div>
+
+                <div>
+                    <h2 class="about_subtitle">I'am Youngwoo Kim</h2>
+                    <span class="about_job">KwangWoon University Student</span>
+                    <p class="about_text">안녕하세요! 광운대학교 정보융합학부 김영우입니다. 이 페이지에서는 제가 사용 가능한 언어, 취득한 자격증 정보, 취미, 목표 등을 나타내고 있습니다.
+                        <br> 방명록을 남겨주셔도 좋습니다.🥰
+                        <br>github와 instagram에도 언제든 놀러오세요!
+                        <br><br>Birthday: 2004. 11. 19.
+                    <br>MBTI: ISTJ</p>
+
+                    <div class="about_social">
+                        <a href="https://www.instagram.com/zer0.wxx" target="_blank" class="about_social_icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/0wkim" target="_blank"  class="about_social_icon"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- skills -->
+        <section class="skills section" id="skills">
+            <h2 class="section_title">Skills</h2>
+
+            <div class="skills_container bd_grid">
+                <div class="skills_box">
+                    <h3 class="skills_subtitle">Development</h3>
+                    <span class="skills_name">Html</span>
+                    <span class="skills_name">Css</span>
+                    <span class="skills_name">Javascript</span>
+                    <span class="skills_name">Python</span>
+                    <span class="skills_name">Java</span>
+
+                    <h3 class="skills_subtitle">Certificate</h3>
+                    <span class="skills_name">웹디자인기능사</span>
+                    <span class="skills_name">컴퓨터활용능력 2급</span>
+                    <span class="skills_name">GTQ 포토샵 1급</span>
+                    <span class="skills_name">GTQ 일러스트 2급</span>
+                    <span class="skills_name">전산회계 2급</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- hobby -->
+        <section class="hobby section" id="hobby">
+            <h2 class="section_title">Hobby</h2>
+            
+            <div class="hobby_container bd_grid">
+                <div class="hobby_img">
+                    <!-- img -->
+                    <img src="/img/hobby1.jpg" alt="hobby1">
+
+                    <div class="hobby_textbox">
+                        <span class="hobby_text">저는 저희 집 고양이😸 레이와 함께 놀고, 잠 자는 것을 정말 좋아합니다!<br> 이건 제 취미이자, 제가 가장 좋아하는 일이에요.🥰</span>
+                    </div>
+                </div>
+                <div class="hobby_img">
+                    <!-- img -->
+                    <img src="/img/hobby2.jpg" alt="hobby2">
+
+                    <div class="hobby_textbox">
+                        <span class="hobby_text">여러 전시회를 방문하는 것을 좋아합니다. 그림과 공간이 주는 매력이 크게 다가오는 것 같아요. 특히 저희 어머니와 함께 전시회 데이트를 하면 더더욱 행복합니다!💞</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- goal -->
+        <section class="goal section" id="goal">
+            <h2 class="section_title">Goal</h2>
+
+            <div class="goal_container bd_grid">
+                <span class="goal_title">My Goal is to become a <strong>WEB Developer</strong>.</span>
+                <p class="goal_text">제 목표는 웹 개발자가 되는 것 입니다. <br>프론트엔드와 백엔드 중 어떤 분야를 선택할지는 아직 정하지 않았지만, 대학 생활을 하며 최대한 다양한 것들을 배우고 한 가지 분야를 선택해서 전문성을 키워나가고 싶습니다. <br>지금은 많이 부족하지만, 더 노력해서 좋은 개발자가 되겠습니다!😊</p>
+            </div>
+        </section>
+
+        <!-- guestbook -->
+        <section class="guestbook section" id="guestbook">
+            <h2 class="section_title">GuestBook</h2>
+
+            <div class="guestbook_container bg_grid">
+                <span class="guestbook_text">방명록을 작성해보세요!</span>
+
+                <div id="guestbook_form">
+                    <label for="name">Name</label>
+                    <input type="text" class="name_input" id="name">
+                    <br>
+                    <label for="message">Message</label>
+                    <textarea class="text_input" id="message"></textarea>
+                    <br>
+                    <div class="guestbook_button">
+                        <button type="submit" class="submit" id="submit_btn">Submit</button>
+                    </div>
+                </div>
+
+                <div id="entries">
+                    <!-- 엔트리 추가 방식 -->
+                    <!-- <div class="entry">
+                        <p class="entry_name"><strong>lorem</strong></p>
+                        <p class="enty_text">Lorem ipsum dolor sit amet.</p>
+                        <p class="timestamp">Posted on 20240530</p>
+                        <button class="delete_btn">Delete</button>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section class="contact section" id="contact">
+            <h2 class="section_title">Contact</h2>
+
+            <div class="contact_container bd_grid">
+                <div class="contact_info">
+                    <h3 class="contact_subtitle">EMAIL</h3>
+                    <span class="contact_text">0wkim@naver.com</span>
+                    <h3 class="contact_subtitle">PHONE</h3>
+                    <span class="contact_text">010-2643-9649</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer section">
+        <div class="footer_container bd_grid">
+            <div class="footer_data">
+                <h2 class="footer_title">Youngwoo Kim</h2>
+                <p class="footer_text">I'm Youngwoo Kim and this is my Introduction Page.</p>
+            </div>
+
+            <div class="footer_data">
+                <h2 class="footer_title">EXPLORE</h2>
+                    <ul>
+                        <li><a href="#home" class="footer_link">Home</a></li>
+                        <li><a href="#about" class="footer_link">About</a></li>
+                        <li><a href="#skills" class="footer_link">Skills</a></li>
+                        <li><a href="#hobby" class="footer_link">Hobby</a></li>
+                        <li><a href="#goal" class="footer_link">Goal</a></li>
+                        <li><a href="#guestbook" class="footer_link">GuestBook</a></li>
+                        <li><a href="#contact" class="footer_link">Contact</a></li>
+                    </ul>
+            </div>
+
+            <div class="footer_data">
+                <h2 class="footer_title">FOLLOW</h2>
+                <a href="https://www.instagram.com/zer0.wxx" target="_blank"  class="footer_social"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/0wkim" target="_blank" class="footer_social"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>
