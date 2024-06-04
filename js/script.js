@@ -85,6 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 호스트 설정
     const host = 'http://127.0.0.1:80'; 
 
+    const timestamp = new Date();
+
     // 서버에서 방명록 엔트리 가져오기
     function loadGuestbookEntries() {
         axios.get(`${host}/guestbook`)
@@ -98,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     entryDiv.innerHTML = `
                         <p class="entry_name"><strong>${entry.name}</strong></p>
                         <p class="entry_text">${entry.message}</p>
-                        <p class="timestamp">Posted on: ${entry.timestamp}</p>
+                        <p class="timestamp">Posted on: ${timestamp.getHours()}:${timestamp.getMinutes()}:${timestamp.getSeconds()}</p>
                         <button class="delete_btn" data-index="${index}">Delete</button>
                     `;
                     entryDiv.querySelector('.delete_btn').addEventListener('click', function() {
