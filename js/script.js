@@ -85,31 +85,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // 호스트 설정
     const host = 'http://127.0.0.1:80'; 
 
-    const timestamp = new Date();
-
     // 서버에서 방명록 엔트리 가져오기
     function loadGuestbookEntries() {
         axios.get(`${host}/guestbook`)
-            .then(response => {
-                const entries = response.data;
-                const entriesDiv = document.getElementById('entries');
-                entriesDiv.innerHTML = '';
-                entries.forEach((entry, index) => {
-                    const entryDiv = document.createElement('div');
-                    entryDiv.classList.add('entry');
-                    entryDiv.innerHTML = `
-                        <p class="entry_name"><strong>${entry.name}</strong></p>
-                        <p class="entry_text">${entry.message}</p>
-                        <p class="timestamp">Posted on: ${timestamp.getHours()}:${timestamp.getMinutes()}:${timestamp.getSeconds()}</p>
-                        <button class="delete_btn" data-index="${index}">Delete</button>
-                    `;
-                    entryDiv.querySelector('.delete_btn').addEventListener('click', function() {
-                        deleteGuestbookEntry(index);
-                    });
-                    entriesDiv.appendChild(entryDiv);
+        .then(response => {
+            const entries = response.data;
+            const entriesDiv = document.getElementById('entries');
+            entriesDiv.innerHTML = '';
+            entries.forEach((entry, index) => {
+                const entryDiv = document.createElement('div');
+                entryDiv.classList.add('entry');
+
+                // 타임스탬프 변환
+                const date = new Date(entry.timestamp);
+                const formattedDate = date.toLocaleString();
+
+                entryDiv.innerHTML = `
+                    <p class="entry_name"><strong>${entry.name}</strong></p>
+                    <p class="entry_text">${entry.message}</p>
+                    <p class="timestamp">Posted on: ${formattedDate}</p>
+                    <button class="delete_btn" data-index="${index}">Delete</button>
+                `;
+                entryDiv.querySelector('.delete_btn').addEventListener('click', function() {
+                    deleteGuestbookEntry(index);
                 });
-            })
-            .catch(error => console.error('Error:', error));
+                entriesDiv.appendChild(entryDiv);
+            });
+        })
+        .catch(error => console.error('Error:', error));
     }
 
     // 새로운 방명록 엔트리 추가
@@ -117,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         axios.post(`${host}/guestbook`, {
             name: name,
             message: message,
-            timestamp: ''
+            timestamp: new Date().toISOString() // 현재 시간을 ISO 포맷으로 추가
         })
         .then(response => {
             loadGuestbookEntries();
